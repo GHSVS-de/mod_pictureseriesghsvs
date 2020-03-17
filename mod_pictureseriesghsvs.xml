@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.9" client="site" method="upgrade">
+	<name>MOD_PICTURESERIESGHSVS</name>
+	<author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer (GHSVS.de)</author>
+	<creationDate>2020-03-15</creationDate>
+	<copyright>Copyright (C) 2019 - 2020, G@HService Berlin Neukölln, Volkmar Volli Schlothauer (GHSVS.de). All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorUrl>https://www.ghsvs.de</authorUrl>
+	<version>2020.03.15</version>
+	<versionHistory>
+2020.03.15:
+https://relaunch-bs3.ghsvs.de/ für Bild-Text-Anleitungen
+	</versionHistory>
+	<description>Bild-neben-Text-Modul. Mehrere Reihen (rows). By GHSVS.de</description>
+
+	<updateservers><server type="extension" priority="1" name="MOD_PICTURESERIESGHSVS">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/pictureseriesghsvs-update.xml</server></updateservers>
+	<changelogurl>https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/pictureseriesghsvs-changelog.xml</changelogurl>
+	<infourl>https://updates.ghsvs.de/changelog.php?file=pictureseriesghsvs</infourl>
+
+	<scriptfile>installerScript.php</scriptfile>
+	<minimumPhp>7.2.0</minimumPhp>
+	<minimumJoomla>3.9.0</minimumJoomla>
+	<maximumJoomla>3.9.99999</maximumJoomla>
+	<maximumPhp>7.4.999999</maximumPhp>
+	<allowDowngrades>1</allowDowngrades>
+
+	<files>
+		<filename module="mod_pictureseriesghsvs">mod_pictureseriesghsvs.php</filename>
+		<filename>installerScript.php</filename>
+		<filename>LICENSE.txt</filename>
+		<folder>language</folder>
+		<folder>myforms</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+
+			<fieldset name="basic" addfieldpath="plugins/system/jce/fields">
+				<!--<field name="backendAssets" type="modflexsliderghsvs.backend" label="" />-->
+			</fieldset><!--/basic-->
+
+			<fieldset name="pictureseries_anlegen"
+				label="Picture-Serien"
+				description="PLG_SYSTEM_BS3GHSVS_WHERE_TO_FIND_ICONS">
+				
+		<field name="headIcon" type="text" default="" filter="string" 
+			label="Überschrift-Icon CSS-Klasse" 
+			description="" />
+
+		<field name="headFoto" class="extended-width" type="mediajce"
+			addfieldpath="plugins/system/jce/fields"
+			label="Überschrift-Bild/Logo (Überschrift-Bild überschreibt Icon-Klasse)"
+			description=""
+			default="" 
+			preview="true" />
+				
+		<field name="headLine" type="text" default="" filter="string"
+			 class="extended-width"
+			label="Hauptüberschrift" 
+			description="" />
+				
+		<field name="headLineTag" type="list" default="h2" filter="string"
+			class="extended-width"
+			label="Überschriften-Tag der Hauptüberschrift" 
+			description=""
+			showon="headLine!:">
+				<option value="h2">h2</option>
+				<option value="h3">h3</option>
+				<option value="h4">h4</option>
+				<option value="h5">h5</option>
+				<option value="h6">h6</option>
+		</field>
+
+		<field name="itemHeadTags" type="list" default="h3" filter="string"
+			class="extended-width"
+			label="Überschriften-Tags der Items" 
+			description="">
+				<option value="h3">h3</option>
+				<option value="h4">h4</option>
+				<option value="h5">h5</option>
+				<option value="h6">h6</option>
+		</field>
+
+			<field name="fotos" type="subform" min="1" max="100" multiple="true"
+				formsource="modules/mod_pictureseriesghsvs/myforms/subform.xml" 
+				layout="joomla.form.field.subform.repeatable" groupByFieldset="false"
+				label="Picture-Serie anlegen"
+				description="" />
+		</fieldset>
+
+		
+			<fieldset name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+	<field name="Name" type="text" default="" filter="string" class="extended-width"
+		label="Überschrift" />
+	
+	<field name="foto" class="extended-width" type="mediajce"
+		label="Foto"
+		description=""
+		default="" 
+		preview="true" />
+		
+	<!--<field name="imageColumnClass" type="text" filter="string"
+		label="Image Column Class"
+		default="order-last" />-->
+
+	<field name="altText" class="extended-width" type="text" filter="string"
+		label="ALT text"
+		description=""
+		default="" />
+		
+	<field name="text" type="editor"
+		label="Text"
+		filter="safehtml" />
+	
+	<field name="active" type="list" filter="integer"
+		default="1" label="Aktiviert (anzeigen)">
+		<option value="0">JNO</option>
+		<option value="1">JYES</option>
+	</field>
+
+
+
+</form>
