@@ -14,13 +14,15 @@ https://relaunch-bs3.ghsvs.de/ für Bild-Text-Anleitungen
 	<description>Bild-neben-Text-Modul. Mehrere Reihen (rows). By GHSVS.de</description>
 
 	<updateservers><server type="extension" priority="1" name="MOD_PICTURESERIESGHSVS">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/pictureseriesghsvs-update.xml</server></updateservers>
+
 	<changelogurl>https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/pictureseriesghsvs-changelog.xml</changelogurl>
+
 	<infourl>https://updates.ghsvs.de/changelog.php?file=pictureseriesghsvs</infourl>
 
 	<scriptfile>installerScript.php</scriptfile>
 	<minimumPhp>7.2.0</minimumPhp>
 	<minimumJoomla>3.9.0</minimumJoomla>
-	<maximumJoomla>3.9.99999</maximumJoomla>
+	<maximumJoomla>3.10.99999</maximumJoomla>
 	<maximumPhp>7.4.999999</maximumPhp>
 	<allowDowngrades>1</allowDowngrades>
 
